@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Mahfuzur Rahman - Full Stack Developer Portfolio</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#8b5cf6", // Violet-500
+              secondary: "#ec4899", // Pink-500
+              "background-light": "#f8fafc",
+              "background-dark": "#0f0f11", // Nearly black
+              "surface-light": "#ffffff",
+              "surface-dark": "#18181b", // Zinc-900
+              "card-dark": "#202026",
+            },
+            fontFamily: {
+              display: ["Poppins", "sans-serif"],
+              body: ["Poppins", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.5rem",
+              xl: "1rem",
+              "2xl": "1.5rem",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+      }
+      .blob-shape {
+        border-radius: 40% 60% 70% 30% / 40% 60% 30% 70%;
+        /* transition: all 1s ease-in-out; */
+        animation: morph 8s ease-in-out infinite;
+      }
+      @keyframes morph {
+        0% {
+          border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+        }
+        50% {
+          border-radius: 70% 30% 46% 54% / 30% 29% 71% 70%;
+        }
+        100% {
+          border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+        }
+      }
+
+      .glow-bg {
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        background: radial-gradient(
+          circle,
+          rgba(139, 92, 246, 0.15) 0%,
+          rgba(0, 0, 0, 0) 70%
+        );
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 0;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background-light dark:bg-background-dark text-gray-800 dark:text-gray-200 transition-colors duration-300 relative overflow-x-hidden"
+  >
+    <div class="glow-bg top-0 left-0"></div>
+    <div
+      class="glow-bg top-[20%] right-0 bg-[radial-gradient(circle,_rgba(236,72,153,0.15)_0%,_rgba(0,0,0,0)_70%)]"
+    ></div>
+    <div class="glow-bg bottom-0 left-[20%]"></div>
+    <nav
+      class="fixed w-full z-50 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-md border-b border-gray-200 dark:border-gray-800"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-20 items-center">
+          <div class="flex-shrink-0 flex items-center">
+            <span
+              class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary"
+            >
+              Mahfuzur Rahman
+            </span>
+          </div>
+          <div class="hidden md:flex space-x-8">
+            <a
+              class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors"
+              href="#home"
+              >Home</a
+            >
+            <a
+              class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors"
+              href="#about"
+              >About</a
+            >
+            <a
+              class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors"
+              href="#resume"
+              >Resume</a
+            >
+            <a
+              class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors"
+              href="#portfolio"
+              >Portfolio</a
+            >
+            <a
+              class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors"
+              href="#services"
+              >Services</a
+            >
+            <a
+              class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors"
+              href="#contact"
+              >Contact</a
+            >
+            <button
+              class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors"
+              onclick="document.documentElement.classList.toggle('dark')"
+            >
+              <span class="material-icons-outlined dark:hidden">dark_mode</span>
+              <span
+                class="material-icons-outlined hidden dark:block text-yellow-400"
+                >light_mode</span
+              >
+            </button>
+          </div>
+          <div class="md:hidden flex items-center">
+            <button
+              class="text-gray-600 dark:text-gray-300 hover:text-white focus:outline-none"
+            >
+              <span class="material-icons-outlined">menu</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      
+    </nav>
+    <main class="relative z-10 pt-20">
+      <section
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 grid md:grid-cols-2 gap-12 items-center"
+        id="home"
+      >
+        <div class="space-y-8 animate-fade-in-up">
+          <h1
+            class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white leading-tight"
+          >
+            Mahfuzur Rahman
+            <span
+              class="block text-2xl md:text-3xl font-medium text-gray-500 dark:text-gray-400 mt-2"
+              >| MERN stack developer</span
+            >
+          </h1>
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm md:text-base text-gray-600 dark:text-gray-300"
+          >
+            <div class="flex items-center space-x-2">
+              <span class="w-2 h-2 bg-primary rounded-full"></span>
+              <span class="font-semibold text-gray-800 dark:text-gray-200"
+                >Birthday:</span
+              >
+              04 December 1992
+            </div>
+            <div class="flex items-center space-x-2">
+              <span class="w-2 h-2 bg-primary rounded-full"></span>
+              <span class="font-semibold text-gray-800 dark:text-gray-200"
+                >Age:</span
+              >
+              33
+            </div>
+            <div class="flex items-center space-x-2">
+              <span class="w-2 h-2 bg-primary rounded-full"></span>
+              <span class="font-semibold text-gray-800 dark:text-gray-200"
+                >Degree:</span
+              >
+              B.sc in Textile
+            </div>
+            <div class="flex items-center space-x-2">
+              <span class="w-2 h-2 bg-primary rounded-full"></span>
+              <span class="font-semibold text-gray-800 dark:text-gray-200"
+                >City:</span
+              >
+              Bangladesh, Gazipur
+            </div>
+            <div class="flex items-center space-x-2">
+              <span
+                class="w-2 h-2 bg-green-500 rounded-full animate-pulse"
+              ></span>
+              <span class="font-semibold text-gray-800 dark:text-gray-200"
+                >Freelance:</span
+              >
+              Available
+            </div>
+          </div>
+          <div class="flex flex-wrap gap-4 pt-4">
+            <a
+              class="px-8 py-3 bg-primary hover:bg-violet-600 text-white rounded-lg shadow-lg shadow-primary/30 transition-all transform hover:-translate-y-1 font-medium"
+              href="#contact"
+            >
+              Contact me
+            </a>
+            <a
+              class="px-8 py-3 bg-transparent border border-gray-400 dark:border-gray-600 text-gray-800 dark:text-white rounded-lg hover:border-primary hover:text-primary dark:hover:border-primary dark:hover:text-primary transition-all font-medium"
+              href="#portfolio"
+            >
+              View my work
+            </a>
+          </div>
+        </div>
+        <div class="relative flex justify-center items-center">
+          <div
+            class="absolute inset-0 bg-gradient-to-tr from-primary/20 to-secondary/20 blob-shape transform scale-110"
+          ></div>
+          <div class="relative w-80 h-80 md:w-96 md:h-96 z-10">
+            <div
+              class="w-full h-full blob-shape overflow-hidden border-4 border-gray-200 dark:border-gray-700 shadow-2xl relative"
+            >
+              <img
+                alt="Profile of Bandeye Khodaa"
+                class="w-full h-full object-cover"
+                src="./img/mahfuz_136x104.png"
+              />
+            </div>
+            <div
+              class="absolute top-0 right-10 w-16 h-16 bg-surface-light dark:bg-card-dark rounded-full flex items-center justify-center shadow-lg border border-gray-100 dark:border-gray-700 animate-bounce"
+              style="animation-duration: 3s"
+            >
+              <span
+                  class="text-yellow-500 font-bold text-xl md:text-2xl font-mono"
+                  >JS</span
+                >
+            </div>
+            <div
+              class="absolute bottom-4 -left-2 w-16 h-16 bg-surface-light dark:bg-card-dark rounded-full flex items-center justify-center shadow-lg border border-gray-100 dark:border-gray-700 animate-bounce"
+              style="animation-duration: 4s"
+            >
+               <span
+                  class="text-purple-600 dark:text-purple-400 font-bold text-2xl md:text-2xl font-mono"
+                  >css</span
+                >
+            </div>
+          </div>
+        </div>
+      </section>
+       <section class="text-center py-12">
+          <h1
+            class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4"
+          >
+            Technical Proficiency
+          </h1>
+          <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+            A showcase of my expertise across the full stack development
+            spectrum, demonstrating my capabilities in both backend architecture
+            and frontend user interfaces.
+          </p>
+        </section>
+      <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 " id="about">
+        <div class="grid md:grid-cols-2 gap-8">
+           <div class="group relative">
+            <div
+              class="absolute -inset-0.5 bg-gradient-to-r from-pink-600 to-purple-600 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"
+            ></div>
+            <div
+              class="relative p-8 bg-card-light dark:bg-gray-800/80 backdrop-blur-xl border border-gray-200 dark:border-gray-700 rounded-2xl shadow-xl dark:shadow-2xl h-full flex flex-col"
+            >
+              <div class="flex items-center justify-center mb-8 space-x-3">
+                <span class="material-icons text-3xl text-primary"
+                  >storage</span
+                >
+                <h2
+                  class="text-2xl font-semibold text-gray-800 dark:text-gray-100"
+                >
+                  Backend developer
+                </h2>
+              </div>
+              <div class="space-y-6 flex-grow">
+                <div>
+                  <div class="flex justify-between mb-2">
+                    <span
+                      class="text-base font-medium text-gray-700 dark:text-gray-300"
+                    >
+                      NoSQL / MongoDB</span
+                    >
+                    <span
+                      class="text-sm font-semibold text-gray-500 dark:text-gray-400"
+                      >76%</span
+                    >
+                  </div>
+                  <div
+                    class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5 overflow-hidden"
+                  >
+                    <div
+                      class="bg-primary h-2.5 rounded-full progress-bar-fill"
+                      style="width: 76%"
+                    ></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between mb-2">
+                    <span
+                      class="text-base font-medium text-gray-700 dark:text-gray-300"
+                      >Express.js</span
+                    >
+                    <span
+                      class="text-sm font-semibold text-gray-500 dark:text-gray-400"
+                      >84%</span
+                    >
+                  </div>
+                  <div
+                    class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5 overflow-hidden"
+                  >
+                    <div
+                      class="bg-primary h-2.5 rounded-full progress-bar-fill"
+                      style="width: 84%"
+                    ></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between mb-2">
+                    <span
+                      class="text-base font-medium text-gray-700 dark:text-gray-300"
+                      >CRUD Operations</span
+                    >
+                    <span
+                      class="text-sm font-semibold text-gray-500 dark:text-gray-400"
+                      >79%</span
+                    >
+                  </div>
+                  <div
+                    class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5 overflow-hidden"
+                  >
+                    <div
+                      class="bg-primary h-2.5 rounded-full progress-bar-fill"
+                      style="width: 79%"
+                    ></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between mb-2">
+                    <span
+                      class="text-base font-medium text-gray-700 dark:text-gray-300"
+                      >Node.js</span
+                    >
+                    <span
+                      class="text-sm font-semibold text-gray-500 dark:text-gray-400"
+                      >70%</span
+                    >
+                  </div>
+                  <div
+                    class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5 overflow-hidden"
+                  >
+                    <div
+                      class="bg-primary h-2.5 rounded-full progress-bar-fill"
+                      style="width: 70%"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="group relative">
+            <div
+              class="absolute -inset-0.5 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"
+            ></div>
+            <div
+              class="relative p-8 bg-card-light dark:bg-gray-800/80 backdrop-blur-xl border border-gray-200 dark:border-gray-700 rounded-2xl shadow-xl dark:shadow-2xl h-full flex flex-col"
+            >
+              <div class="flex items-center justify-center mb-8 space-x-3">
+                <span class="material-icons text-3xl text-primary">code</span>
+                <h2
+                  class="text-2xl font-semibold text-gray-800 dark:text-gray-100"
+                >
+                  Front end developer
+                </h2>
+              </div>
+              <div class="space-y-6 flex-grow">
+                <div>
+                  <div class="flex justify-between mb-2">
+                    <span
+                      class="text-base font-medium text-gray-700 dark:text-gray-300"
+                      >React &amp; Next.js</span
+                    >
+                    <span
+                      class="text-sm font-semibold text-gray-500 dark:text-gray-400"
+                      >95%</span
+                    >
+                  </div>
+                  <div
+                    class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5 overflow-hidden"
+                  >
+                    <div
+                      class="bg-primary h-2.5 rounded-full progress-bar-fill"
+                      style="width: 95%"
+                    ></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between mb-2">
+                    <span
+                      class="text-base font-medium text-gray-700 dark:text-gray-300"
+                      >JavaScript / TypeScript</span
+                    >
+                    <span
+                      class="text-sm font-semibold text-gray-500 dark:text-gray-400"
+                      >80%</span
+                    >
+                  </div>
+                  <div
+                    class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5 overflow-hidden"
+                  >
+                    <div
+                      class="bg-primary h-2.5 rounded-full progress-bar-fill"
+                      style="width: 80%"
+                    ></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between mb-2">
+                    <span
+                      class="text-base font-medium text-gray-700 dark:text-gray-300"
+                      >HTML / CSS / Tailwind</span
+                    >
+                    <span
+                      class="text-sm font-semibold text-gray-500 dark:text-gray-400"
+                      >85%</span
+                    >
+                  </div>
+                  <div
+                    class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5 overflow-hidden"
+                  >
+                    <div
+                      class="bg-primary h-2.5 rounded-full progress-bar-fill"
+                      style="width: 85%"
+                    ></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between mb-2">
+                    <span
+                      class="text-base font-medium text-gray-700 dark:text-gray-300"
+                      >Git / GitHub</span
+                    >
+                    <span
+                      class="text-sm font-semibold text-gray-500 dark:text-gray-400"
+                      >90%</span
+                    >
+                  </div>
+                  <div
+                    class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5 overflow-hidden"
+                  >
+                    <div
+                      class="bg-primary h-2.5 rounded-full progress-bar-fill"
+                      style="width: 90%"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="fixed bottom-6 right-6 z-50">
+        <button
+          aria-label="Toggle Dark Mode"
+            class="bg-primary text-white p-3 rounded-full shadow-lg hover:bg-opacity-90 transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary dark:focus:ring-offset-gray-900"
+            onclick="document.documentElement.classList.toggle('dark')"
+            >
+          <span class="material-icons dark:hidden">dark_mode</span>
+          <span class="material-icons hidden dark:block">light_mode</span>
+        </button>
+        </div>
+      </div>
+      </section>
+      <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16" id="resume">
+        <h2 class="text-3xl font-bold text-center mb-12 dark:text-white">
+          Resume
+        </h2>
+        <div
+          class="relative space-y-12 pl-8 border-l-2 border-gray-200 dark:border-gray-700 ml-4 md:ml-0"
+        >
+          <div class="relative group">
+            <span
+              class="absolute -left-[43px] top-0 flex h-12 w-12 items-center justify-center rounded-full bg-surface-light dark:bg-card-dark border-2 border-gray-200 dark:border-gray-600 shadow-sm group-hover:border-primary group-hover:scale-110 transition-all"
+            >
+              <span
+                class="material-icons-outlined text-gray-500 dark:text-gray-400"
+                >school</span
+              >
+            </span>
+            <div class="pl-6">
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white">
+                Completed a Frontend Development Course
+              </h3>
+              <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">
+                Started the journey into web development by enrolling in a Frontend course focused on HTML, CSS, and JavaScript fundamentals at <strong>Programming Hero</strong>. Successfully completed the course and earned a certificate upon graduation.
+              </p>
+              </p>
+            </div>
+          </div>
+          <div class="relative group">
+            <span
+              class="absolute -left-[43px] top-0 flex h-12 w-12 items-center justify-center rounded-full bg-surface-light dark:bg-card-dark border-2 border-gray-200 dark:border-gray-600 shadow-sm group-hover:border-secondary group-hover:scale-110 transition-all"
+            >
+              <span
+                class="material-icons-outlined text-gray-500 dark:text-gray-400"
+                >work_outline</span
+              >
+            </span>
+            <div class="pl-6">
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white">
+                Frontend Developer – Programming Hero (Course Project)
+              </h3>
+              <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">
+                Worked on building dynamic web interfaces using React and CSS frameworks. Collaborated with course materials and mockups to create pixel-perfect user experiences.
+              </p>
+            </div>
+          </div>
+          <div class="relative group">
+            <span
+              class="absolute -left-[43px] top-0 flex h-12 w-12 items-center justify-center rounded-full bg-surface-light dark:bg-card-dark border-2 border-gray-200 dark:border-gray-600 shadow-sm group-hover:border-primary group-hover:scale-110 transition-all"
+            >
+              <span
+                class="material-icons-outlined text-gray-500 dark:text-gray-400"
+                >settings</span
+              >
+            </span>
+            <div class="pl-6">
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white">
+                Backend Development Bootcamp – Programming Hero
+              </h3>
+              <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">
+               After completing frontend learning, enrolled in Programming Hero’s backend-focused program covering Node.js, Express, MongoDB, and API design. Built several full-featured server-side applications as course projects.
+              </p>
+            </div>
+          </div>
+          <div class="relative group">
+            <span
+              class="absolute -left-[43px] top-0 flex h-12 w-12 items-center justify-center rounded-full bg-surface-light dark:bg-card-dark border-2 border-gray-200 dark:border-gray-600 shadow-sm group-hover:border-secondary group-hover:scale-110 transition-all"
+            >
+              <span
+                class="material-icons-outlined text-gray-500 dark:text-gray-400"
+                >star_outline</span
+              >
+            </span>
+            <div class="pl-6">
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white">
+                Became a MERN-Stack Developer – Programming Hero
+              </h3>
+              <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">
+                After months of learning and hands-on experience, transitioned from backend to MERN-Stack development. Built full-featured projects integrating MongoDB, Express, React, and Node.js, gaining deeper technical expertise.
+              </p>
+            </div>
+          </div>
+          <div class="relative group">
+            <span
+              class="absolute -left-[43px] top-0 flex h-12 w-12 items-center justify-center rounded-full bg-surface-light dark:bg-card-dark border-2 border-gray-200 dark:border-gray-600 shadow-sm group-hover:border-primary group-hover:scale-110 transition-all"
+            >
+              <span
+                class="material-icons-outlined text-gray-500 dark:text-gray-400"
+                >business_center</span
+              >
+            </span>
+            <div class="pl-6">
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white">
+                MERN-Stack Developer - Programming Hero
+              </h3>
+              <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">
+                Completed hands-on projects covering frontend to backend using MongoDB, Express, React, and Node.js (MERN stack) during the Programming Hero course. Gained experience in building end-to-end full-stack applications.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16" id="portfolio">
+        <h2 class="text-3xl font-bold text-center mb-8 dark:text-white">My Projects</h2>
+
+        <!-- Filter Buttons -->
+        <div class="flex flex-wrap justify-center gap-4 mb-10">
+        <button class="filter-btn active px-6 py-2 rounded-full text-sm font-medium bg-primary text-white shadow-lg transition-all" data-filter="all">All</button>
+        <button class="filter-btn px-6 py-2 rounded-full text-sm font-medium bg-white dark:bg-card-dark text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all" data-filter="frontend">Frontend</button>
+        <button class="filter-btn px-6 py-2 rounded-full text-sm font-medium bg-white dark:bg-card-dark text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all" data-filter="backend">Backend</button>
+        <button class="filter-btn px-6 py-2 rounded-full text-sm font-medium bg-white dark:bg-card-dark text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all" data-filter="fullstack">MERN-Stack</button>
+        </div>
+
+        <!-- Portfolio Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Example Project -->
+          <a
+              href="https://ripon301252.github.io/fuddy-campus-API-B-12/"
+              target="_blank"
+              class="portfolio-item group relative rounded-xl overflow-hidden shadow-lg aspect-video cursor-pointer block"
+              data-category="frontend"
+            >
+            <img
+              src="./img/Screenshot_32.png"
+              alt="React Website"
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+            />
+
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6"
+              >
+                <h3 class="text-white font-bold text-lg">Fuddy Campus</h3>
+                <p class="text-gray-300 text-sm">Frontend project built with JS</p>
+              </div>  
+          </a>
+          <a
+              href="https://ripon301252.github.io/Green-Earth-API-B-12/"
+              target="_blank"
+              class="portfolio-item group relative rounded-xl overflow-hidden shadow-lg aspect-video cursor-pointer block"
+              data-category="frontend"
+            >
+            <img
+              src="./img/Screenshot_33.png"
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+            />
+
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6"
+              >
+                <h3 class="text-white font-bold text-lg">Green Earth</h3>
+                <p class="text-gray-300 text-sm">Frontend project built with JS</p>
+              </div>  
+          </a>
+          <a
+              href="https://ripon301252.github.io/pets-API-B-12/"
+              target="_blank"
+              class="portfolio-item group relative rounded-xl overflow-hidden shadow-lg aspect-video cursor-pointer block"
+              data-category="frontend"
+            >
+            <img
+              src="./img/Screenshot_34.png"
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+            />
+
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6"
+              >
+                <h3 class="text-white font-bold text-lg">Pets</h3>
+                <p class="text-gray-300 text-sm">Frontend project built with JS</p>
+              </div>  
+          </a>
+          <a
+              href="https://asset-verse-13e4f4.netlify.app/"
+              target="_blank"
+              class="portfolio-item group relative rounded-xl overflow-hidden shadow-lg aspect-video cursor-pointer block"
+              data-category="fullstack"
+            >
+            <img
+              src="./img/Screenshot_35.png"
+              alt="React Website"
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+            />
+
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6"
+              >
+                <h3 class="text-white font-bold text-lg">Node API</h3>
+                <p class="text-gray-300 text-sm">Backend REST API using Node.js & Express</p>
+              </div>  
+          </a>
+
+            <a
+              href="https://pawmart-cf02df.netlify.app/"
+              target="_blank"
+              class="portfolio-item group relative rounded-xl overflow-hidden shadow-lg aspect-video cursor-pointer block"
+              data-category="fullstack"
+            >
+            <img
+              src="./img/Screenshot_36.png"
+              alt="React Website"
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+            />
+
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6"
+              >
+                <h3 class="text-white font-bold text-lg">React</h3>
+                
+                <p class="text-gray-300 text-sm">Frontend project built with React.js</p>
+              </div>  
+          </a>
+
+           <a
+              href="https://pawmart-cf02df.netlify.app/"
+              target="_blank"
+              class="portfolio-item group relative rounded-xl overflow-hidden shadow-lg aspect-video cursor-pointer block"
+              data-category="backend"
+            >
+            <img
+              src="./img/Screenshot_37.png"
+              alt="React Website"
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+            />
+
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6"
+              >
+                <h3 class="text-white font-bold text-lg">React</h3>
+                
+                <p class="text-gray-300 text-sm">Frontend project built with React.js</p>
+              </div>  
+          </a>
+         
+          <a
+              href="https://kids-toy-up-73b1c6.netlify.app/"
+              target="_blank"
+              class="portfolio-item group relative rounded-xl overflow-hidden shadow-lg aspect-video cursor-pointer block"
+              data-category="backend"
+            >
+            <img
+              src="./img/Screenshot_36.png"
+              alt="React Website"
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+            />
+
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6"
+              >
+                <h3 class="text-white font-bold text-lg">React</h3>
+                
+                <p class="text-gray-300 text-sm">Frontend project built with React.js</p>
+              </div>  
+          </a>
+         
+
+        <!-- Add more projects here -->
+        </div>
+      </section>
+
+      <section
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16"
+        id="services"
+      >
+        <h2 class="text-3xl font-bold text-center mb-12 dark:text-white">
+          Services
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div
+            class="bg-white dark:bg-card-dark p-6 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-800 hover:border-primary dark:hover:border-primary transition-colors group"
+          >
+            <div
+              class="w-14 h-14 rounded-full bg-orange-100 dark:bg-orange-900/30 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform"
+            >
+              <span class="material-icons-outlined text-orange-500 text-2xl"
+                >speed</span
+              >
+            </div>
+            <h3 class="text-lg font-bold mb-2 dark:text-white">
+              Speed &amp; Optimization
+            </h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400">
+              Optimizing load times, NoSQL, and overall user experience through
+              code drift and DB optimization.
+            </p>
+          </div>
+          <div
+            class="bg-white dark:bg-card-dark p-6 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-800 hover:border-primary dark:hover:border-primary transition-colors group"
+          >
+            <div
+              class="w-14 h-14 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform"
+            >
+              <span class="material-icons-outlined text-green-500 text-2xl"
+                >code</span
+              >
+            </div>
+            <h3 class="text-lg font-bold mb-2 dark:text-white">
+              MERN-Stack Solutions
+            </h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400">
+              End-to-end development, from frontend UIs to backend
+              infrastructure and deployment.
+            </p>
+          </div>
+          <div
+            class="bg-white dark:bg-card-dark p-6 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-800 hover:border-primary dark:hover:border-primary transition-colors group"
+          >
+            <div
+              class="w-14 h-14 rounded-full bg-pink-100 dark:bg-pink-900/30 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform"
+            >
+              <span class="material-icons-outlined text-pink-500 text-2xl"
+                >dns</span
+              >
+            </div>
+            <h3 class="text-lg font-bold mb-2 dark:text-white">
+              Backend Development
+            </h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400">
+              Developing secure and scalable server-side logic, APIs, and
+              database integrations.
+            </p>
+          </div>
+          <div
+            class="bg-white dark:bg-card-dark p-6 rounded-2xl shadow-lg border border-gray-100 dark:border-gray-800 hover:border-primary dark:hover:border-primary transition-colors group"
+          >
+            <div
+              class="w-14 h-14 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform"
+            >
+              <span class="material-icons-outlined text-blue-500 text-2xl"
+                >web</span
+              >
+            </div>
+            <h3 class="text-lg font-bold mb-2 dark:text-white">
+              Frontend Development
+            </h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400">
+              Building responsive user-friendly web interfaces using modern
+              frameworks like React.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 mb-16"
+        id="contact"
+      >
+        <h2 class="text-3xl font-bold text-center mb-12 dark:text-white">
+          Contact me
+        </h2>
+        <div class="flex flex-wrap justify-center gap-6 md:gap-8">
+          <a
+            class="group flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-full border-2 border-gray-300 dark:border-gray-600 hover:border-primary hover:bg-primary/10 transition-all"
+            href="https://github.com/ripon301252" target="_blank"
+          >
+            <svg
+              class="w-8 h-8 md:w-10 md:h-10 text-gray-600 dark:text-gray-300 group-hover:text-primary fill-current"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+              ></path>
+            </svg>
+          </a>
+          <a
+            class="group flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-full border-2 border-gray-300 dark:border-gray-600 hover:border-blue-600 hover:bg-blue-600/10 transition-all"
+            href="https://www.linkedin.com/in/mahfuzur-rahman-280471392/" target="_blank"
+          >
+            <svg
+              class="w-8 h-8 md:w-10 md:h-10 text-gray-600 dark:text-gray-300 group-hover:text-blue-600 fill-current"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+              ></path>
+            </svg>
+          </a>
+          <a
+            class="group flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-full border-2 border-gray-300 dark:border-gray-600 hover:border-red-500 hover:bg-red-500/10 transition-all"
+            href="mailto:ripon301252@gmail.com"
+            >
+            <span
+              class="material-icons-outlined text-gray-600 dark:text-gray-300 group-hover:text-red-500 text-3xl md:text-4xl"
+              >
+              email
+            </span>
+          </a>
+
+         <a
+            class="group flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-full border-2 border-gray-300 dark:border-gray-600 hover:border-sky-500 hover:bg-sky-500/10 transition-all"
+            href="https://www.facebook.com/profile.php?id=100089627922381"
+            target="_blank"
+            rel="noopener noreferrer"
+            >
+            <svg
+              class="w-8 h-8 md:w-10 md:h-10 text-gray-600 dark:text-gray-300 group-hover:text-sky-500 fill-current"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+              >
+              <path
+              d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953h-1.513c-1.49 0-1.953.925-1.953 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+              />
+            </svg>
+        </a>
+
+        <a
+          class="group flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-full border-2 border-gray-300 dark:border-gray-600    hover:border-green-500 hover:bg-green-500/10 transition-all"
+            href="tel:+8801 626607121"
+          >
+          <span
+            class="material-icons-outlined text-gray-600 dark:text-gray-300 group-hover:text-green-500 text-3xl md:text-4xl"
+          >
+            call
+          </span>
+        </a>
+
+        </div>
+      </section>
+      <footer
+        class="py-6 text-center text-gray-500 dark:text-gray-500 text-sm border-t border-gray-200 dark:border-gray-800"
+      >
+        © 2026 Bandeye Khodaa. All rights reserved.
+      </footer>
+    </main>
+    <script>
+      // Simple script to handle portfolio filter button active state styling
+      const filterBtns = document.querySelectorAll(".filter-btn");
+      filterBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          // Remove active classes from all
+          filterBtns.forEach((b) => {
+            b.classList.remove(
+              "bg-primary",
+              "text-white",
+              "shadow-lg",
+              "shadow-primary/40"
+            );
+            b.classList.add(
+              "bg-white",
+              "dark:bg-card-dark",
+              "text-gray-600",
+              "dark:text-gray-300"
+            );
+            b.classList.remove("active");
+          });
+          // Add active classes to clicked
+          btn.classList.remove(
+            "bg-white",
+            "dark:bg-card-dark",
+            "text-gray-600",
+            "dark:text-gray-300"
+          );
+          btn.classList.add(
+            "bg-primary",
+            "text-white",
+            "shadow-lg",
+            "shadow-primary/40",
+            "active"
+          );
+        });
+      });
+    </script>
+
+    <!-- JS for filter functionality -->
+    <script>
+      const filterButtons = document.querySelectorAll('.filter-btn');
+      const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+      filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          // Remove active from all buttons
+          filterButtons.forEach(btn => btn.classList.remove('active'));
+          button.classList.add('active');
+
+          const filter = button.dataset.filter;
+
+          portfolioItems.forEach(item => {
+            if(filter === 'all' || item.dataset.category === filter) {
+              item.classList.remove('hidden');
+            } else {
+              item.classList.add('hidden');
+            }
+          });
+        });
+      });
+    </script>
+
+
+  </body>
+</html>

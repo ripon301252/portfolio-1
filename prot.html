@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Developer Portfolio - Mahfuzur Rahman</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#8b5cf6", // Violet-500
+              "primary-hover": "#7c3aed", // Violet-600
+              "background-light": "#f3f4f6", // Gray-100
+              "background-dark": "#0f0f12", // Very dark custom
+              "card-dark": "#18181b", // Zinc-900
+              "card-light": "#ffffff",
+            },
+            fontFamily: {
+              display: ["Poppins", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.75rem",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #4b5563;
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #6b7280;
+      }
+      .blob-shape {
+        border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+        animation: morph 8s ease-in-out infinite;
+      }
+      @keyframes morph {
+        0% {
+          border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+        }
+        50% {
+          border-radius: 70% 30% 46% 54% / 30% 29% 71% 70%;
+        }
+        100% {
+          border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+        }
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background-light dark:bg-background-dark text-gray-800 dark:text-gray-300 font-display transition-colors duration-300 overflow-x-hidden selection:bg-primary selection:text-white"
+  >
+    <div
+      class="fixed top-0 left-0 w-96 h-96 bg-primary opacity-10 blur-[120px] rounded-full pointer-events-none -translate-x-1/2 -translate-y-1/2 dark:block hidden"
+    ></div>
+    <div
+      class="fixed bottom-0 right-0 w-96 h-96 bg-blue-500 opacity-10 blur-[120px] rounded-full pointer-events-none translate-x-1/2 translate-y-1/2 dark:block hidden"
+    ></div>
+    <nav
+      class="fixed w-full z-50 top-0 transition-all duration-300 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-20">
+          <div class="flex-shrink-0 flex items-center">
+            <span
+              class="text-2xl font-bold text-gray-900 dark:text-white tracking-tight"
+              >Mr.<span class="text-primary"> Mahfuzur Rahman</span></span
+            >
+          </div>
+          <div class="hidden md:flex space-x-8 items-center">
+            <a
+              class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium"
+              href="#"
+              >Home</a
+            >
+            <a
+              class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium"
+              href="#about"
+              >About</a
+            >
+            <a
+              class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium"
+              href="#resume"
+              >Resume</a
+            >
+            <a
+              class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium"
+              href="#portfolio"
+              >Portfolio</a
+            >
+            <a
+              class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary transition-colors text-sm font-medium"
+              href="#services"
+              >Services</a
+            >
+            <a
+              class="px-5 py-2.5 rounded-full bg-primary text-white text-sm font-medium hover:bg-primary-hover transition-all shadow-lg shadow-primary/30"
+              href="#contact"
+              >Contact</a
+            >
+            <button
+              class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors"
+              onclick="document.documentElement.classList.toggle('dark')"
+            >
+              <span class="material-icons-outlined dark:hidden">dark_mode</span>
+              <span
+                class="material-icons-outlined hidden dark:block text-yellow-400"
+                >light_mode</span
+              >
+            </button>
+          </div>
+          <div class="md:hidden flex items-center">
+            <button
+              class="text-gray-600 dark:text-gray-300 hover:text-primary p-2"
+            >
+              <span class="material-icons-outlined">menu</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <section class="pt-32 pb-20 lg:pt-48 lg:pb-32 relative" id="about">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          class="flex flex-col-reverse lg:flex-row items-center gap-12 lg:gap-24"
+        >
+          <div class="flex-1 text-center lg:text-left z-10">
+            <h4
+              class="text-primary font-semibold tracking-wider uppercase mb-2"
+            >
+              Hello, I am
+            </h4>
+            <h1
+              class="text-4xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-6 leading-tight"
+            >
+              Mahfuzur Rahman <br />
+              <span
+                class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-500"
+                >MERN Stack Developer</span
+              >
+            </h1>
+            <div
+              class="grid grid-cols-1 sm:grid-cols-2 gap-y-2 gap-x-8 text-sm text-gray-600 dark:text-gray-400 mb-8 max-w-lg mx-auto lg:mx-0"
+            >
+              <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-primary"></span>
+                <span><strong>Birthday:</strong> 04 December 1992</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-primary"></span>
+                <span><strong>Age:</strong> 33</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-primary"></span>
+                <span><strong>Degree:</strong> B.sc in Textile</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-primary"></span>
+                <span><strong>Freelance:</strong> Available</span>
+              </div>
+              <div class="flex items-center gap-2 sm:col-span-2">
+                <span class="w-2 h-2 rounded-full bg-primary"></span>
+                <span><strong>City:</strong> Bangladesh, Gazipur</span>
+              </div>
+            </div>
+            <div
+              class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+            >
+              <a
+                class="px-8 py-3 rounded bg-primary text-white font-medium hover:bg-primary-hover transition-all shadow-lg shadow-primary/30"
+                href="#contact"
+                >Contact me</a
+              >
+              <a
+                class="px-8 py-3 rounded border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:border-primary hover:text-primary dark:hover:border-primary dark:hover:text-primary transition-all"
+                href="#portfolio"
+                >View my work</a
+              >
+            </div>
+          </div>
+          <div class="flex-1 relative flex justify-center lg:justify-end z-10">
+            <div class="relative w-80 h-80 lg:w-96 lg:h-96">
+              <div
+                class="absolute inset-0 bg-gradient-to-tr from-primary to-blue-500 rounded blob-shape opacity-20 dark:opacity-40 animate-pulse"
+              ></div>
+              <div
+                class="absolute inset-2 bg-card-light dark:bg-card-dark rounded blob-shape overflow-hidden border-4 border-white dark:border-gray-800 shadow-2xl"
+              >
+                <img
+                  alt="Profile of Developer"
+                  class="w-full h-full object-cover"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-U9KCtdJu0TrCAxX_tcITpSjwOYw6dnCwmAy5c2fWGVD5ZN0_a5efHoT-mj1TmTQkYgT4yM3DyTI2zMFdqNo1etYbuPFGXBe_wPf3J_QA5StGvTwqxoXUd18Xwxm8JPmCCxOhJbOL5XOpYxc5jhOLDBwPZKslIdd2iTKtra-CyAZS26FKv2QbhXeYT9IKbtD5_V-Gce1MECnnCzjL5k9XmRZMpJZk_pdQaBR-ML4UlMrhHEYwxSo7sgUFRLldhqocSl-N72IwKLA"
+                />
+              </div>
+              <div
+                class="absolute -top-2 -right-4 md:-right-8 w-14 h-14 md:w-16 md:h-16 bg-gray-100 dark:bg-[#1e1e24] rounded-full flex items-center justify-center shadow-lg border border-gray-200 dark:border-gray-700 z-20 animate-bounce"
+                style="animation-duration: 3s"
+              >
+                <span
+                  class="text-yellow-500 font-bold text-xl md:text-2xl font-mono"
+                  >JS</span
+                >
+              </div>
+              <div
+                class="absolute -bottom-7 -left-4 md:-left-8 w-16 h-16 md:w-20 md:h-20 bg-gray-100 dark:bg-[#1e1e24] rounded-full flex items-center justify-center shadow-lg border border-gray-200 dark:border-gray-700 z-20 animate-bounce"
+                style="animation-duration: 4s; animation-delay: 1s"
+              >
+                <span
+                  class="text-purple-600 dark:text-purple-400 font-bold text-2xl md:text-3xl font-mono"
+                  >css</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="py-20 bg-white dark:bg-black/20">
+      <div class="max-w-6xl w-full mx-auto">
+        <section class="text-center mb-12">
+          <h1
+            class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4"
+          >
+            Technical Proficiency
+          </h1>
+          <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+            A showcase of my expertise across the full stack development
+            spectrum, demonstrating my capabilities in both backend architecture
+            and frontend user interfaces.
+          </p>
+        </section>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+          <div class="group relative">
+            <div
+              class="absolute -inset-0.5 bg-gradient-to-r from-pink-600 to-purple-600 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"
+            ></div>
+            <div
+              class="relative p-8 bg-card-light dark:bg-gray-800/80 backdrop-blur-xl border border-gray-200 dark:border-gray-700 rounded-2xl shadow-xl dark:shadow-2xl h-full flex flex-col"
+            >
+              <div class="flex items-center justify-center mb-8 space-x-3">
+                <span class="material-icons text-3xl text-primary"
+                  >storage</span
+                >
+                <h2
+                  class="text-2xl font-semibold text-gray-800 dark:text-gray-100"
+                >
+                  Backend developer
+                </h2>
+              </div>
+              <div class="space-y-6 flex-grow">
+                <div>
+                  <div class="flex justify-between mb-2">
+                    <span
+                      class="text-base font-medium text-gray-700 dark:text-gray-300"
+                    >
+                      NoSQL / MongoDB</span
+                    >
+                    <span
+                      class="text-sm font-semibold text-gray-500 dark:text-gray-400"
+                      >76%</span
+                    >
+                  </div>
+                  <div
+                    class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5 overflow-hidden"
+                  >
+                    <div
+                      class="bg-primary h-2.5 rounded-full progress-bar-fill"
+                      style="width: 76%"
+                    ></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between mb-2">
+                    <span
+                      class="text-base font-medium text-gray-700 dark:text-gray-300"
+                      >Express.js</span
+                    >
+                    <span
+                      class="text-sm font-semibold text-gray-500 dark:text-gray-400"
+                      >84%</span
+                    >
+                  </div>
+                  <div
+                    class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5 overflow-hidden"
+                  >
+                    <div
+                      class="bg-primary h-2.5 rounded-full progress-bar-fill"
+                      style="width: 84%"
+                    ></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between mb-2">
+                    <span
+                      class="text-base font-medium text-gray-700 dark:text-gray-300"
+                      >CRUD Operations</span
+                    >
+                    <span
+                      class="text-sm font-semibold text-gray-500 dark:text-gray-400"
+                      >79%</span
+                    >
+                  </div>
+                  <div
+                    class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5 overflow-hidden"
+                  >
+                    <div
+                      class="bg-primary h-2.5 rounded-full progress-bar-fill"
+                      style="width: 79%"
+                    ></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between mb-2">
+                    <span
+                      class="text-base font-medium text-gray-700 dark:text-gray-300"
+                      >Node.js</span
+                    >
+                    <span
+                      class="text-sm font-semibold text-gray-500 dark:text-gray-400"
+                      >70%</span
+                    >
+                  </div>
+                  <div
+                    class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5 overflow-hidden"
+                  >
+                    <div
+                      class="bg-primary h-2.5 rounded-full progress-bar-fill"
+                      style="width: 70%"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="group relative">
+            <div
+              class="absolute -inset-0.5 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"
+            ></div>
+            <div
+              class="relative p-8 bg-card-light dark:bg-gray-800/80 backdrop-blur-xl border border-gray-200 dark:border-gray-700 rounded-2xl shadow-xl dark:shadow-2xl h-full flex flex-col"
+            >
+              <div class="flex items-center justify-center mb-8 space-x-3">
+                <span class="material-icons text-3xl text-primary">code</span>
+                <h2
+                  class="text-2xl font-semibold text-gray-800 dark:text-gray-100"
+                >
+                  Front end developer
+                </h2>
+              </div>
+              <div class="space-y-6 flex-grow">
+                <div>
+                  <div class="flex justify-between mb-2">
+                    <span
+                      class="text-base font-medium text-gray-700 dark:text-gray-300"
+                      >React &amp; Next.js</span
+                    >
+                    <span
+                      class="text-sm font-semibold text-gray-500 dark:text-gray-400"
+                      >95%</span
+                    >
+                  </div>
+                  <div
+                    class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5 overflow-hidden"
+                  >
+                    <div
+                      class="bg-primary h-2.5 rounded-full progress-bar-fill"
+                      style="width: 95%"
+                    ></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between mb-2">
+                    <span
+                      class="text-base font-medium text-gray-700 dark:text-gray-300"
+                      >JavaScript / TypeScript</span
+                    >
+                    <span
+                      class="text-sm font-semibold text-gray-500 dark:text-gray-400"
+                      >80%</span
+                    >
+                  </div>
+                  <div
+                    class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5 overflow-hidden"
+                  >
+                    <div
+                      class="bg-primary h-2.5 rounded-full progress-bar-fill"
+                      style="width: 80%"
+                    ></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between mb-2">
+                    <span
+                      class="text-base font-medium text-gray-700 dark:text-gray-300"
+                      >HTML / CSS / Tailwind</span
+                    >
+                    <span
+                      class="text-sm font-semibold text-gray-500 dark:text-gray-400"
+                      >85%</span
+                    >
+                  </div>
+                  <div
+                    class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5 overflow-hidden"
+                  >
+                    <div
+                      class="bg-primary h-2.5 rounded-full progress-bar-fill"
+                      style="width: 85%"
+                    ></div>
+                  </div>
+                </div>
+                <div>
+                  <div class="flex justify-between mb-2">
+                    <span
+                      class="text-base font-medium text-gray-700 dark:text-gray-300"
+                      >Git / GitHub</span
+                    >
+                    <span
+                      class="text-sm font-semibold text-gray-500 dark:text-gray-400"
+                      >90%</span
+                    >
+                  </div>
+                  <div
+                    class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5 overflow-hidden"
+                  >
+                    <div
+                      class="bg-primary h-2.5 rounded-full progress-bar-fill"
+                      style="width: 90%"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="fixed bottom-6 right-6 z-50">
+          <button
+            aria-label="Toggle Dark Mode"
+            class="bg-primary text-white p-3 rounded-full shadow-lg hover:bg-opacity-90 transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary dark:focus:ring-offset-gray-900"
+            onclick="document.documentElement.classList.toggle('dark')"
+          >
+            <span class="material-icons dark:hidden">dark_mode</span>
+            <span class="material-icons hidden dark:block">light_mode</span>
+          </button>
+        </div>
+      </div>
+    </section>
+    <section class="py-20 relative overflow-hidden" id="resume">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+            Resume
+          </h2>
+          <div class="h-1 w-20 bg-primary mx-auto rounded-full"></div>
+        </div>
+        <div class="relative pl-8 sm:pl-0">
+          <div
+            class="absolute left-8 sm:left-1/2 top-0 bottom-0 w-0.5 bg-gray-200 dark:bg-gray-700 -translate-x-1/2"
+          ></div>
+          <div class="space-y-12">
+            <div
+              class="relative flex flex-col sm:flex-row items-center justify-between group"
+            >
+              <div
+                class="sm:w-5/12 sm:text-right order-2 sm:order-1 pl-8 sm:pl-0 sm:pr-8"
+              >
+                <h3 class="text-lg font-bold text-gray-900 dark:text-white">
+                  Completed a Frontend Development Course
+                </h3>
+                <p class="text-sm text-gray-500 mt-2">
+                  Started the journey into web development by enrolling in a
+                  intensive course focused on HTML, CSS and JS fundamentals.
+                </p>
+              </div>
+              <div
+                class="absolute left-0 sm:left-1/2 w-10 h-10 -translate-x-1/2 bg-card-light dark:bg-card-dark border-4 border-primary rounded-full flex items-center justify-center z-10 shadow-lg group-hover:scale-110 transition-transform"
+              >
+                <span class="material-icons-outlined text-primary text-sm"
+                  >school</span
+                >
+              </div>
+              <div class="sm:w-5/12 order-3"></div>
+            </div>
+            <div
+              class="relative flex flex-col sm:flex-row items-center justify-between group"
+            >
+              <div class="sm:w-5/12 order-1"></div>
+              <div
+                class="absolute left-0 sm:left-1/2 w-10 h-10 -translate-x-1/2 bg-card-light dark:bg-card-dark border-4 border-primary rounded-full flex items-center justify-center z-10 shadow-lg group-hover:scale-110 transition-transform"
+              >
+                <span class="material-icons-outlined text-primary text-sm"
+                  >work</span
+                >
+              </div>
+              <div class="sm:w-5/12 text-left order-2 pl-8 sm:pl-8">
+                <h3 class="text-lg font-bold text-gray-900 dark:text-white">
+                  Frontend Developer - [Company Name]
+                </h3>
+                <p class="text-sm text-gray-500 mt-2">
+                  Worked as a frontend developer building dynamic web interfaces
+                  using React frameworks.
+                </p>
+              </div>
+            </div>
+            <div
+              class="relative flex flex-col sm:flex-row items-center justify-between group"
+            >
+              <div
+                class="sm:w-5/12 sm:text-right order-2 sm:order-1 pl-8 sm:pl-0 sm:pr-8"
+              >
+                <h3 class="text-lg font-bold text-gray-900 dark:text-white">
+                  Backend Development Bootcamp
+                </h3>
+                <p class="text-sm text-gray-500 mt-2">
+                  Enrolled in a backend focused program covering Node.js,
+                  Express, MongoDB and API design.
+                </p>
+              </div>
+              <div
+                class="absolute left-0 sm:left-1/2 w-10 h-10 -translate-x-1/2 bg-card-light dark:bg-card-dark border-4 border-primary rounded-full flex items-center justify-center z-10 shadow-lg group-hover:scale-110 transition-transform"
+              >
+                <span class="material-icons-outlined text-primary text-sm"
+                  >code</span
+                >
+              </div>
+              <div class="sm:w-5/12 order-3"></div>
+            </div>
+            <div
+              class="relative flex flex-col sm:flex-row items-center justify-between group"
+            >
+              <div class="sm:w-5/12 order-1"></div>
+              <div
+                class="absolute left-0 sm:left-1/2 w-10 h-10 -translate-x-1/2 bg-card-light dark:bg-card-dark border-4 border-primary rounded-full flex items-center justify-center z-10 shadow-lg group-hover:scale-110 transition-transform"
+              >
+                <span class="material-icons-outlined text-primary text-sm"
+                  >star</span
+                >
+              </div>
+              <div class="sm:w-5/12 text-left order-2 pl-8 sm:pl-8">
+                <h3 class="text-lg font-bold text-gray-900 dark:text-white">
+                  Became a MERN-Stack Developer
+                </h3>
+                <p class="text-sm text-gray-500 mt-2">
+                  Made the leap from frontend to fullstack, allowing for deeper
+                  technical immersion.
+                </p>
+              </div>
+            </div>
+            <div
+              class="relative flex flex-col sm:flex-row items-center justify-between group"
+            >
+              <div
+                class="sm:w-5/12 sm:text-right order-2 sm:order-1 pl-8 sm:pl-0 sm:pr-8"
+              >
+                <h3 class="text-lg font-bold text-gray-900 dark:text-white">
+                  MERN-Stack Developer - [Company Name]
+                </h3>
+                <p class="text-sm text-gray-500 mt-2">
+                  Took ownership of projects from designing frontend to
+                  implementing backend logic.
+                </p>
+              </div>
+              <div
+                class="absolute left-0 sm:left-1/2 w-10 h-10 -translate-x-1/2 bg-card-light dark:bg-card-dark border-4 border-primary rounded-full flex items-center justify-center z-10 shadow-lg group-hover:scale-110 transition-transform"
+              >
+                <span class="material-icons-outlined text-primary text-sm"
+                  >business_center</span
+                >
+              </div>
+              <div class="sm:w-5/12 order-3"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="py-20 bg-white dark:bg-black/20" id="portfolio">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8">
+            My Portfolio
+          </h2>
+          <div
+            class="inline-flex flex-wrap justify-center gap-2 p-1.5 bg-gray-100 dark:bg-gray-800 rounded-lg"
+          >
+            <button
+              class="px-6 py-2 rounded-md bg-white dark:bg-gray-700 text-primary shadow-sm text-sm font-medium transition-all"
+            >
+              All
+            </button>
+            <button
+              class="px-6 py-2 rounded-md text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-white text-sm font-medium transition-all"
+            >
+              Websites
+            </button>
+            <button
+              class="px-6 py-2 rounded-md text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-white text-sm font-medium transition-all"
+            >
+              Apps
+            </button>
+            <button
+              class="px-6 py-2 rounded-md text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-white text-sm font-medium transition-all"
+            >
+              Article
+            </button>
+            <button
+              class="px-6 py-2 rounded-md text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-white text-sm font-medium transition-all"
+            >
+              Weblog
+            </button>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div
+            class="group relative rounded overflow-hidden shadow-lg aspect-video cursor-pointer"
+          >
+            <img
+              alt="Dashboard Project"
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUIRPiBqGUnThX9qPtqggVJDdXxG59FCIH3CBGT-_cyv0vO3QVBPkXKcV-9zgZXkA0oDgmBZH9r-517v7SCiniyXLyfO4XsNikg5A381SUcQ2DKaMkEHfj0sbcEtzbBSVN5XYoJaJmXq9YVYm2ESaSfl2GQzEo6osO-zYqSpFLvCRBRsYJjVQiehvs-aXv7ndkUdArFiVDkGP5MgJKpb5OMjEy12vaLd5ceJSbUHUMY6MnHDClNyMnJJBAn7m5Gt09iCvVSl4CZz4"
+            />
+            <div
+              class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center p-4"
+            >
+              <h3
+                class="text-white font-bold text-xl mb-2 translate-y-4 group-hover:translate-y-0 transition-transform duration-300"
+              >
+                Finance Dashboard
+              </h3>
+              <p
+                class="text-gray-300 text-sm translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75"
+              >
+                React / Tailwind
+              </p>
+            </div>
+          </div>
+          <div
+            class="group relative rounded overflow-hidden shadow-lg aspect-video cursor-pointer"
+          >
+            <img
+              alt="E-commerce Project"
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbyqdxSpb1P3N3W3G0p_ctG37A2BDvLQz2wOjbIbB-5kPuVSyE5SvLAMFXagk7d8RWb3ytFNc6yNFIGvzbMD_Aq6_Cd9WUc_J6Y99GrgDwGuFMoXwmAFoYzcwhq_-QGUDS_3BXgJN9xva4NT5b4k4YKrU6My-lThjmg9D1lLtmeLlIY7b1Wbt6qQ-36jJS0LAxt68qEuj4nRsPVDb2pcNUpe0SPBBIAPtEWZvpDykge5NIdaKxV0SRt5t3nANXP84oSx5lpFBWayU"
+            />
+            <div
+              class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center p-4"
+            >
+              <h3
+                class="text-white font-bold text-xl mb-2 translate-y-4 group-hover:translate-y-0 transition-transform duration-300"
+              >
+                Tech Store
+              </h3>
+              <p
+                class="text-gray-300 text-sm translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75"
+              >
+                Vue / Laravel
+              </p>
+            </div>
+          </div>
+          <div
+            class="group relative rounded overflow-hidden shadow-lg aspect-video cursor-pointer"
+          >
+            <img
+              alt="Dark Mode UI"
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCViG6bhEPnZVlNI_ykOdlLwFCfCfAM4W4aKt9-nEr9NN7OuFDm5c6sODBB0Cmv6mUGXSpRZvUD8VRqzoMUis5a8SEzKhv2Ogd_1oNnrSAcVZNpZM9YHGhPC_6SMDyE6m6YVNnB-K_LqW3r-1_5-vwn9Cv1dKxmVqBZX0GjqkAkwOTGSB3eIdQIOuNjH75D3oQ27VyWSreEWeYsCsy7DOpZUJ99mUblCrwhI0FJ3Cn742KIHvPIU-Z7hyY1DsozgenscyMytBJrHjI"
+            />
+            <div
+              class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center p-4"
+            >
+              <h3
+                class="text-white font-bold text-xl mb-2 translate-y-4 group-hover:translate-y-0 transition-transform duration-300"
+              >
+                Cyber UI Kit
+              </h3>
+              <p
+                class="text-gray-300 text-sm translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75"
+              >
+                Figma / CSS
+              </p>
+            </div>
+          </div>
+          <div
+            class="group relative rounded overflow-hidden shadow-lg aspect-video cursor-pointer"
+          >
+            <img
+              alt="Mobile App"
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxZ3zM5ug-BPsRceHyZjqa52B9Lrol9AEvmkbb7vX8jylsz13wZ_5vMr9BiC7i-BDZJrlxwnEsknfnMi02TTLY-GEuobnVEbg99rjlx05nBu0U6mtP5odT_T8uQTiN1dXFcDa-gXjbUtERPoAqKThOH9tM2kSOlgIfY-m8Pld5YWWB9Odgi-KvxAixGyewbGksuOt2-MX4fnQMsbif3xhCxKgVPZ0zcGhWdjWNSZGvctLi3Ib9ypl1ngUIUfoup9Wlte90AB4H7qs"
+            />
+            <div
+              class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center p-4"
+            >
+              <h3
+                class="text-white font-bold text-xl mb-2 translate-y-4 group-hover:translate-y-0 transition-transform duration-300"
+              >
+                Meditation App
+              </h3>
+              <p
+                class="text-gray-300 text-sm translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75"
+              >
+                Flutter
+              </p>
+            </div>
+          </div>
+          <div
+            class="group relative rounded overflow-hidden shadow-lg aspect-video cursor-pointer"
+          >
+            <img
+              alt="Fitness Tracker"
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCViG6bhEPnZVlNI_ykOdlLwFCfCfAM4W4aKt9-nEr9NN7OuFDm5c6sODBB0Cmv6mUGXSpRZvUD8VRqzoMUis5a8SEzKhv2Ogd_1oNnrSAcVZNpZM9YHGhPC_6SMDyE6m6YVNnB-K_LqW3r-1_5-vwn9Cv1dKxmVqBZX0GjqkAkwOTGSB3eIdQIOuNjH75D3oQ27VyWSreEWeYsCsy7DOpZUJ99mUblCrwhI0FJ3Cn742KIHvPIU-Z7hyY1DsozgenscyMytBJrHjI" alt="Node.js API" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+            />
+            <div
+              class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center p-4"
+            >
+              <h3
+                class="text-white font-bold text-xl mb-2 translate-y-4 group-hover:translate-y-0 transition-transform duration-300"
+              >
+                FitTrack
+              </h3>
+              <p
+                class="text-gray-300 text-sm translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75"
+              >
+                React Native
+              </p>
+            </div>
+          </div>
+          <div
+            class="group relative rounded overflow-hidden shadow-lg aspect-video cursor-pointer"
+          >
+            <img
+              alt="Data Analytics"
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSO6osxf6BTo5BVQpbEPUQTzvClqCWf2nWp9ifQ2St_XBNLgk4_AC5Fxshd2Z5M_2zm9dwaPD8PXe9FfLpzFG6CP2rIMbMOsqRqmqJhpZkln1goebNM2Y2GrFaraxrOXby6IPOy2lLxMnw3K8_WiI_upGa5ehM9e4M0HOAW3riEQwgK_DDIjQPu6i07lMbII0ql5ztq_fc_0PfPMxaMQeo7KdHnYS-jgregmlqSCW5lUPAKX1KSgo0ysC9Ren55UFQ978e9HoQ_gM"
+            />
+            <div
+              class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center p-4"
+            >
+              <h3
+                class="text-white font-bold text-xl mb-2 translate-y-4 group-hover:translate-y-0 transition-transform duration-300"
+              >
+                Analytics SaaS
+              </h3>
+              <p
+                class="text-gray-300 text-sm translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75"
+              >
+                Next.js
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="flex justify-center mt-8 gap-4">
+          <button
+            class="p-3 rounded-full bg-card-light dark:bg-card-dark text-gray-500 hover:text-primary shadow-md hover:shadow-lg transition-all"
+          >
+            <span class="material-icons-outlined">chevron_left</span>
+          </button>
+          <button
+            class="p-3 rounded-full bg-card-light dark:bg-card-dark text-gray-500 hover:text-primary shadow-md hover:shadow-lg transition-all"
+          >
+            <span class="material-icons-outlined">chevron_right</span>
+          </button>
+        </div>
+      </div>
+    </section>
+    <section class="py-20 relative" id="services">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">
+            Services
+          </h2>
+          <div class="h-1 w-20 bg-primary mx-auto rounded-full"></div>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div
+            class="bg-card-light dark:bg-card-dark p-6 rounded-xl border border-gray-100 dark:border-gray-800 hover:border-primary/50 transition-all hover:-translate-y-1 shadow-sm"
+          >
+            <div
+              class="w-14 h-14 bg-orange-100 dark:bg-orange-900/30 text-orange-500 rounded-lg flex items-center justify-center mb-4"
+            >
+              <span class="material-icons-outlined text-3xl">speed</span>
+            </div>
+            <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">
+              Speed &amp; Optimization
+            </h3>
+            <p class="text-sm text-gray-500 dark:text-gray-400">
+              Optimizing load times, NoSQL queries and overall user experience.
+            </p>
+          </div>
+          <div
+            class="bg-card-light dark:bg-card-dark p-6 rounded-xl border border-gray-100 dark:border-gray-800 hover:border-primary/50 transition-all hover:-translate-y-1 shadow-sm"
+          >
+            <div
+              class="w-14 h-14 bg-green-100 dark:bg-green-900/30 text-green-500 rounded-lg flex items-center justify-center mb-4"
+            >
+              <span class="material-icons-outlined text-3xl"
+                >integration_instructions</span
+              >
+            </div>
+            <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">
+              MERN-Stack Solutions
+            </h3>
+            <p class="text-sm text-gray-500 dark:text-gray-400">
+              End-to-end development from database architecture to frontend UI.
+            </p>
+          </div>
+          <div
+            class="bg-card-light dark:bg-card-dark p-6 rounded-xl border border-gray-100 dark:border-gray-800 hover:border-primary/50 transition-all hover:-translate-y-1 shadow-sm"
+          >
+            <div
+              class="w-14 h-14 bg-pink-100 dark:bg-pink-900/30 text-pink-500 rounded-lg flex items-center justify-center mb-4"
+            >
+              <span class="material-icons-outlined text-3xl">dns</span>
+            </div>
+            <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">
+              Backend Development
+            </h3>
+            <p class="text-sm text-gray-500 dark:text-gray-400">
+              Developing secure and scalable APIs with robust integration.
+            </p>
+          </div>
+          <div
+            class="bg-card-light dark:bg-card-dark p-6 rounded-xl border border-gray-100 dark:border-gray-800 hover:border-primary/50 transition-all hover:-translate-y-1 shadow-sm"
+          >
+            <div
+              class="w-14 h-14 bg-blue-100 dark:bg-blue-900/30 text-blue-500 rounded-lg flex items-center justify-center mb-4"
+            >
+              <span class="material-icons-outlined text-3xl">web</span>
+            </div>
+            <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">
+              Frontend Development
+            </h3>
+            <p class="text-sm text-gray-500 dark:text-gray-400">
+              Building responsive and accessible web interfaces using modern
+              frameworks.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer
+      class="py-16 bg-white dark:bg-black/40 border-t border-gray-200 dark:border-gray-800"
+      id="contact"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-10">
+          Contact me
+        </h2>
+        <div class="flex justify-center gap-6 mb-10 flex-wrap">
+          <a
+            class="group w-14 h-14 rounded-full border border-gray-300 dark:border-gray-600 flex items-center justify-center hover:border-primary hover:bg-primary/10 transition-all"
+            href="#"
+          >
+            <img
+              alt="GitHub"
+              class="w-6 h-6 dark:invert group-hover:scale-110 transition-transform"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDarXv4VrskSbyI470ltL3jznwgkitimcHsvdst9-dxu1xK_np5JkCdSA3gq5NPL31cmiClSm5cTKolOP25xSoAYC2ILZLqDqZ-4tO0P7z7gaLnzMc-4Q2ucwXiJSfs_1TyXJtC5QC8dNsfU0djxo2lgwtyZC9cRiNSc9QP03WblKCIP4XVnzUm4LCCrYMp_F6myGFiiZ0aZ1e_wmVmD2GoagCxeOjT1QJF6yPM484mbHx7L25gf-ACTC0ZRyWayDBHH3jCskbMjPo"
+            />
+          </a>
+          <a
+            class="group w-14 h-14 rounded-full border border-gray-300 dark:border-gray-600 flex items-center justify-center hover:border-primary hover:bg-primary/10 transition-all"
+            href="#"
+          >
+            <img
+              alt="LinkedIn"
+              class="w-6 h-6 group-hover:scale-110 transition-transform"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6fJ0pLy5Tr6Fo5wbe3v7c4dwBBVFGX_Hd9VYvIujUrtlbtQCecT4a1g7Vk89dGsyGVgJMbfMonwd2J5QJ45e7Z41Xj9cM-HvemtMEEXkBsxuQ7HDYaWy-mP8KhgKBAK1SZvkiFS9-2sz1e-FmsmB1WbVWOet10TTyqbQ44pQV4JripxzjjYni1gJefbSierXgpQJHSjS3DnyiOuNLTb7J6e25kTX5cvq9fXe6VomjzMpeIumx8Le5xck5BvZ1b1R3QwvAY36fSCU"
+            />
+          </a>
+          <a
+            class="group w-14 h-14 rounded-full border border-gray-300 dark:border-gray-600 flex items-center justify-center hover:border-primary hover:bg-primary/10 transition-all"
+            href="#"
+          >
+            <span
+              class="material-icons-outlined text-gray-600 dark:text-gray-300 group-hover:text-primary text-2xl group-hover:scale-110 transition-transform"
+              >email</span
+            >
+          </a>
+          <a
+            class="group w-14 h-14 rounded-full border border-gray-300 dark:border-gray-600 flex items-center justify-center hover:border-primary hover:bg-primary/10 transition-all"
+            href="#"
+          >
+            <span
+              class="material-icons-outlined text-gray-600 dark:text-gray-300 group-hover:text-primary text-2xl group-hover:scale-110 transition-transform"
+              >send</span
+            >
+          </a>
+          <a
+            class="group w-14 h-14 rounded-full border border-gray-300 dark:border-gray-600 flex items-center justify-center hover:border-primary hover:bg-primary/10 transition-all"
+            href="#"
+          >
+            <span
+              class="material-icons-outlined text-gray-600 dark:text-gray-300 group-hover:text-primary text-2xl group-hover:scale-110 transition-transform"
+              >call</span
+            >
+          </a>
+        </div>
+        <p class="text-gray-500 dark:text-gray-500 text-sm">
+          © 2026 Bandeye Khodaa. All rights reserved.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
