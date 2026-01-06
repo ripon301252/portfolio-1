@@ -14,6 +14,7 @@
       href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
       rel="stylesheet"
     />
+
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
     <script>
       tailwind.config = {
@@ -77,6 +78,26 @@
         z-index: 0;
       }
     </style>
+
+    <style>
+      .nav-link {
+        color: #6b7280; /* gray-500 */
+      }
+      .dark .nav-link {
+        color: #d1d5db; /* gray-300 */
+      }
+      .nav-link.active {
+        color: #8b5cf6; /* primary */
+        font-weight: 600;
+      }
+    </style>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+
   </head>
   <body
     class="bg-background-light dark:bg-background-dark text-gray-800 dark:text-gray-200 transition-colors duration-300 relative overflow-x-hidden"
@@ -99,36 +120,13 @@
             </span>
           </div>
           <div class="hidden md:flex space-x-8">
-            <a
-              class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors"
-              href="#home"
-              >Home</a
-            >
-            <a
-              class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors"
-              href="#about"
-              >About</a
-            >
-            <a
-              class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors"
-              href="#resume"
-              >Resume</a
-            >
-            <a
-              class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors"
-              href="#portfolio"
-              >Portfolio</a
-            >
-            <a
-              class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors"
-              href="#services"
-              >Services</a
-            >
-            <a
-              class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors"
-              href="#contact"
-              >Contact</a
-            >
+           <a href="#home" class="nav-link px-3 py-2 text-sm font-medium transition-colors">Home</a>
+<a href="#about" class="nav-link px-3 py-2 text-sm font-medium transition-colors">About</a>
+<a href="#resume" class="nav-link px-3 py-2 text-sm font-medium transition-colors">Resume</a>
+<a href="#portfolio" class="nav-link px-3 py-2 text-sm font-medium transition-colors">Portfolio</a>
+<a href="#services" class="nav-link px-3 py-2 text-sm font-medium transition-colors">Services</a>
+<a href="#contact" class="nav-link px-3 py-2 text-sm font-medium transition-colors">Contact</a>
+
             <button
               class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors"
               onclick="document.documentElement.classList.toggle('dark')"
@@ -142,14 +140,26 @@
           </div>
           <div class="md:hidden flex items-center">
             <button
-              class="text-gray-600 dark:text-gray-300 hover:text-white focus:outline-none"
+              id="menu-btn"
+              class="text-gray-700 dark:text-gray-300 focus:outline-none"
             >
-              <span class="material-icons-outlined">menu</span>
+              <span class="material-icons-outlined text-3xl">menu</span>
             </button>
           </div>
         </div>
       </div>
-      
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden flex flex-col bg-background-light dark:bg-background-dark border-b border-gray-200 dark:border-gray-800"
+      >
+        <a href="#home" class="nav-link px-3 py-2 text-sm font-medium transition-colors">Home</a>
+        <a href="#about" class="nav-link px-3 py-2 text-sm font-medium transition-colors">About</a>
+        <a href="#resume" class="nav-link px-3 py-2 text-sm font-medium transition-colors">Resume</a>
+        <a href="#portfolio" class="nav-link px-3 py-2 text-sm font-medium transition-colors">Portfolio</a>
+        <a href="#services" class="nav-link px-3 py-2 text-sm font-medium transition-colors">Services</a>
+        <a href="#contact" class="nav-link px-3 py-2 text-sm font-medium transition-colors">Contact</a>
+      </div>
+
     </nav>
     <main class="relative z-10 pt-20">
       <section
@@ -969,6 +979,40 @@
         });
       });
     </script>
+
+    <script>
+      const menuBtn = document.getElementById("menu-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+    </script>
+
+    <script>
+      const sections = document.querySelectorAll("section[id]");
+      const navLinks = document.querySelectorAll(".nav-link");
+
+      window.addEventListener("scroll", () => {
+        let current = "";
+
+        sections.forEach(section => {
+          const sectionTop = section.offsetTop - 120;
+          if (scrollY >= sectionTop) {
+            current = section.getAttribute("id");
+          }
+        });
+
+        navLinks.forEach(link => {
+          link.classList.remove("active");
+          if (link.getAttribute("href") === `#${current}`) {
+            link.classList.add("active");
+          }
+        });
+      });
+    </script>
+
+
 
 
   </body>
