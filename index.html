@@ -86,10 +86,11 @@
       .dark .nav-link {
         color: #d1d5db; /* gray-300 */
       }
-      .nav-link.active {
-        color: #8b5cf6; /* primary */
+      nav .nav-link.active {
+        color: #8b5cf6 !important;
         font-weight: 600;
       }
+
     </style>
 
     <style>
@@ -120,12 +121,12 @@
             </span>
           </div>
           <div class="hidden md:flex space-x-8">
-           <a href="#home" class="nav-link px-3 py-2 text-sm font-medium transition-colors">Home</a>
-<a href="#about" class="nav-link px-3 py-2 text-sm font-medium transition-colors">About</a>
-<a href="#resume" class="nav-link px-3 py-2 text-sm font-medium transition-colors">Resume</a>
-<a href="#portfolio" class="nav-link px-3 py-2 text-sm font-medium transition-colors">Portfolio</a>
-<a href="#services" class="nav-link px-3 py-2 text-sm font-medium transition-colors">Services</a>
-<a href="#contact" class="nav-link px-3 py-2 text-sm font-medium transition-colors">Contact</a>
+            <a href="#home" class="nav-link px-3 py-2 text-sm font-medium transition-colors">Home</a>
+            <a href="#about" class="nav-link px-3 py-2 text-sm font-medium transition-colors">About</a>
+            <a href="#resume" class="nav-link px-3 py-2 text-sm font-medium transition-colors">Resume</a>
+            <a href="#portfolio" class="nav-link px-3 py-2 text-sm font-medium transition-colors">Portfolio</a>
+            <a href="#services" class="nav-link px-3 py-2 text-sm font-medium transition-colors">Services</a>
+            <a href="#contact" class="nav-link px-3 py-2 text-sm font-medium transition-colors">Contact</a>
 
             <button
               class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors"
@@ -980,40 +981,53 @@
       });
     </script>
 
-    <script>
-      const menuBtn = document.getElementById("menu-btn");
-      const mobileMenu = document.getElementById("mobile-menu");
+    
 
-      menuBtn.addEventListener("click", () => {
-        mobileMenu.classList.toggle("hidden");
+  <script>
+    // Mobile menu toggle
+    const menuBtn = document.getElementById("menu-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    menuBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
+
+    // Mobile menu click করলে auto close
+    document.querySelectorAll("#mobile-menu .nav-link").forEach(link => {
+      link.addEventListener("click", () => {
+        mobileMenu.classList.add("hidden");
       });
-    </script>
+    });
 
-    <script>
-      const sections = document.querySelectorAll("section[id]");
-      const navLinks = document.querySelectorAll(".nav-link");
+    // Active nav on scroll
+    const sections = document.querySelectorAll("section[id]");
+    const navLinks = document.querySelectorAll(".nav-link");
+    const navbar = document.querySelector("nav");
 
-      window.addEventListener("scroll", () => {
-        let current = "";
+    function activateNav() {
+      let current = "";
+      const navHeight = navbar.offsetHeight;
 
-        sections.forEach(section => {
-          const sectionTop = section.offsetTop - 120;
-          if (scrollY >= sectionTop) {
-            current = section.getAttribute("id");
-          }
-        });
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - navHeight - 10;
+        const sectionHeight = section.offsetHeight;
 
-        navLinks.forEach(link => {
-          link.classList.remove("active");
-          if (link.getAttribute("href") === `#${current}`) {
-            link.classList.add("active");
-          }
-        });
+        if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+          current = section.getAttribute("id");
+        }
       });
-    </script>
 
+      navLinks.forEach(link => {
+        link.classList.remove("active");
+        if (link.getAttribute("href") === `#${current}`) {
+          link.classList.add("active");
+        }
+      });
+    }
 
-
+    window.addEventListener("scroll", activateNav);
+    activateNav(); // page load এ home active
+  </script>
 
   </body>
 </html>
